@@ -1,0 +1,19 @@
+<nav class="nav-wrapper">
+  <div class="container">
+    <a routerLink="/" class="brand-logo">AVIS</a>
+    <ul class="right hide-on-med-and-down">
+        <li><a routerLink="/entidad">Entidades</a></li>
+        <li><a routerLink="/">Contactos</a></li>
+        <li *ngIf="!authservice.isAuthenticated()"><a routerLink="/login">Login</a></li>
+        <!-- Dropdown Trigger -->
+        <li *ngIf="authservice.isAuthenticated()"><a class="dropdown-trigger" data-target="dropdown1">{{authservice.usuario.username}}<i class="material-icons right">arrow_drop_down</i></a></li>
+    </ul>
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">Perfil</a></li>
+        <li class="divider"></li>
+        <li (click)="logout()"><a>Salir</a></li>
+    </ul>
+  </div>
+</nav>
+<router-outlet></router-outlet>

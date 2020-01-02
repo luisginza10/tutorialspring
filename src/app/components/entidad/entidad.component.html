@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">Lista de Entidades</span>
+          <table class="striped centered">
+            <thead>
+              <tr>
+                <th>Código</th>
+                <th>Nombre o razón social</th>
+                <th>Nº doc.</th>
+                <th>Region</th>
+                <th>Detalles</th>
+                <th>Eliminar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of entidades">
+                <td>{{item.id}}</td>
+                <td>{{item.nombrerazon | uppercase}}</td>
+                <td>{{item.ciruc}}</td>
+                <td>{{item.region.descripcion}}</td>
+                <td><i class="material-icons" [routerLink]="['/entidad/formentidad', item.id]">create</i></td>
+                <td><i class="material-icons" (click)="delete(item)">delete</i></td>
+              </tr>
+            </tbody>
+          </table>
+          <app-paginator *ngIf="paginador" [paginador] = "paginador"></app-paginator>
+        </div>
+        <div class="card-action">
+          <button class="btn" [routerLink]="['/entidad/formentidad']">Crear nuevo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

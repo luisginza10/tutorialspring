@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+      <div class="col s3"></div>
+    <div class="col s6">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">{{titulo}}</span>
+
+          <form method="POST">
+             <div class="row">
+               <div class="form-group col-sm-6">
+                    <input name="username" type="text" [(ngModel)]="usuario.username" class="validate" required="" aria-required="true" placeholder="Usuario" autofocus>
+               </div>
+               <div class="form-group col-sm-6">
+                <input name="password" type="password" [(ngModel)]="usuario.password" class="validate" required="" aria-required="true" placeholder="Contraseña">
+               </div>
+                <div class="form-group col-sm-6">
+                  <input (click)='login()' type="submit" class="btn right" value="Iniciar"/>
+                </div>
+             </div>
+        </form>
+        </div>
+      </div>
+    </div>
+    <div class="col s3"></div>
+  </div>
+  </div>
